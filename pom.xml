@@ -19,6 +19,7 @@
     <module>org.lwjgl.glfw</module>
     <module>org.lwjgl.lwjgl</module>
     <module>org.lwjgl.openal</module>
+    <module>org.lwjgl.opencl</module>
     <module>org.lwjgl.opengl</module>
     <module>org.lwjgl.opengles</module>
   </modules>

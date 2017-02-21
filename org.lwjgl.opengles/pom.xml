@@ -63,7 +63,7 @@
   <build>
     <plugins>
 
-      <!-- Unpack LWJGL natives -->
+      <!-- Unpack LWJGL dependencies/sources/natives -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>

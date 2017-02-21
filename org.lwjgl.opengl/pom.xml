@@ -23,6 +23,12 @@
       <artifactId>org.lwjgl.lwjgl</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>org.lwjgl.opencl</artifactId>
+      <version>${project.version}</version>
+      <optional>true</optional>
+    </dependency>
 
     <dependency>
       <groupId>org.lwjgl</groupId>
@@ -58,7 +64,7 @@
   <build>
     <plugins>
 
-      <!-- Unpack LWJGL natives -->
+      <!-- Unpack LWJGL dependencies/sources/natives -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -220,9 +226,9 @@
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
                   org.lwjgl.system,
-                  org.lwjgl.system.*
+                  org.lwjgl.system.*,
 
-                  <!-- TODO: Optional dependency on OpenCL -->
+                  org.lwjgl.opencl; resolution:="optional"
                 </Import-Package>
 
                 <!-- Do not include Java 9 classes from META-INF due to -->
