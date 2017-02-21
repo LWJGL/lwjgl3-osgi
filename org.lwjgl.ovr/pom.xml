@@ -178,7 +178,7 @@
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.util.simd
+                  org.lwjgl.ovr
                 </Export-Package>
 
                 <Include-Resource>
