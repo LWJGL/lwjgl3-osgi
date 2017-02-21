@@ -18,6 +18,7 @@
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
     <module>org.lwjgl.lwjgl</module>
+    <module>org.lwjgl.nfd</module>
     <module>org.lwjgl.openal</module>
     <module>org.lwjgl.opencl</module>
     <module>org.lwjgl.opengl</module>
@@ -345,6 +346,36 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-sse</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nfd</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nfd</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nfd</artifactId>
+        <classifier>natives-linux</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nfd</artifactId>
+        <classifier>natives-macos</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nfd</artifactId>
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
