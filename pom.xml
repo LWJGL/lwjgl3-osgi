@@ -18,6 +18,7 @@
     <module>org.lwjgl.assimp</module>
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
+    <module>org.lwjgl.jawt</module>
     <module>org.lwjgl.lmdb</module>
     <module>org.lwjgl.lwjgl</module>
     <module>org.lwjgl.nfd</module>
@@ -488,6 +489,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-assimp</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-jawt</artifactId>
         <version>${org.lwjgl.version}</version>
       </dependency>
     </dependencies>
