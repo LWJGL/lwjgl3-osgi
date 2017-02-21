@@ -22,6 +22,7 @@
     <module>org.lwjgl.opencl</module>
     <module>org.lwjgl.opengl</module>
     <module>org.lwjgl.opengles</module>
+    <module>org.lwjgl.ovr</module>
     <module>org.lwjgl.sse</module>
     <module>org.lwjgl.vulkan</module>
   </modules>
@@ -313,6 +314,24 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-sse</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-ovr</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-ovr</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-ovr</artifactId>
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
