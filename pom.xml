@@ -17,6 +17,7 @@
   <modules>
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
+    <module>org.lwjgl.lmdb</module>
     <module>org.lwjgl.lwjgl</module>
     <module>org.lwjgl.nfd</module>
     <module>org.lwjgl.openal</module>
@@ -425,6 +426,36 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-xxhash</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lmdb</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lmdb</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lmdb</artifactId>
+        <classifier>natives-linux</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lmdb</artifactId>
+        <classifier>natives-macos</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lmdb</artifactId>
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
