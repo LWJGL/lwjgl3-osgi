@@ -30,6 +30,12 @@
       <version>${project.version}</version>
       <optional>true</optional>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>org.lwjgl.vulkan</artifactId>
+      <version>${project.version}</version>
+      <optional>true</optional>
+    </dependency>
 
     <dependency>
       <groupId>org.lwjgl</groupId>
@@ -229,7 +235,7 @@
                   org.lwjgl.system,
                   org.lwjgl.system.*,
 
-                  <!-- TODO: Optional dependency on Vulkan -->
+                  org.lwjgl.vulkan; resolution:="optional",
                   org.lwjgl.egl; resolution:="optional"
                 </Import-Package>
 

@@ -22,6 +22,7 @@
     <module>org.lwjgl.opencl</module>
     <module>org.lwjgl.opengl</module>
     <module>org.lwjgl.opengles</module>
+    <module>org.lwjgl.vulkan</module>
   </modules>
 
   <properties>
@@ -114,6 +115,12 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-egl</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vulkan</artifactId>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
