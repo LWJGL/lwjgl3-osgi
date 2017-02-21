@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.io7m.bundles</groupId>
+    <artifactId>org.lwjgl.parent</artifactId>
+    <version>3.1.2-SNAPSHOT</version>
+  </parent>
+
+  <packaging>bundle</packaging>
+  <artifactId>org.lwjgl.stb</artifactId>
+  <name>org.lwjgl.stb</name>
+  <description>LWJGL OSGi bundle (STB bindings)</description>
+  <url>https://github.com/LWJGL/lwjgl3-osgi</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>org.lwjgl.lwjgl</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-stb</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-stb</artifactId>
+      <scope>provided</scope>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-stb</artifactId>
+      <classifier>natives-linux</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-stb</artifactId>
+      <classifier>natives-macos</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-stb</artifactId>
+      <classifier>natives-windows</classifier>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Unpack LWJGL dependencies/sources/natives -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <!-- Unpack natives -->
+          <execution>
+            <id>unpack-natives-stb-linux</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-stb</includeArtifactIds>
+              <includeClassifiers>natives-linux</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                **\/*.so,
+                **\/*.so.sha1
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/linux/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-stb-windows-x86</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-stb</includeArtifactIds>
+              <includeClassifiers>natives-windows</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                lwjgl_stb32.dll,
+                lwjgl_stb32.dll.sha1
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-stb-windows-x86_64</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-stb</includeArtifactIds>
+              <includeClassifiers>natives-windows</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                lwjgl_stb.dll,
+                lwjgl_stb.dll.sha1
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-stb-macos-x86_64</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-stb</includeArtifactIds>
+              <includeClassifiers>natives-macos</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                **\/*.dylib,
+                **\/*.dylib.sha1
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/osx/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>unpack-sources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-stb</includeArtifactIds>
+              <includeClassifiers>sources</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>**\/*</includes>
+              <outputDirectory>${project.build.directory}/unpacked-sources</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-source-markers</markersDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Produce source jar -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-sources</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>${project.build.directory}/unpacked-sources</sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sources-jar</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <attach>true</attach>
+              <classifier>sources</classifier>
+              <archive>
+                <addMavenDescriptor>false</addMavenDescriptor>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Produce OSGi bundle -->
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>default-bundle</id>
+            <configuration>
+              <instructions>
+                <Import-Package>
+                  <!-- LWJGL states that sun.misc.Unsafe is optional but recommended -->
+                  sun.misc; resolution:="optional",
+
+                  <!-- Add explicit imports for LWJGL -->
+                  org.lwjgl,
+                  org.lwjgl.system,
+                  org.lwjgl.system.*
+                </Import-Package>
+
+                <!-- Do not include Java 9 classes from META-INF due to -->
+                <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
+                <Embed-Dependency>
+                  artifactId=lwjgl-stb;classifier=!sources;inline=!META-INF/**/*.class
+                </Embed-Dependency>
+
+                <Export-Package>
+                  org.lwjgl.stb
+                </Export-Package>
+
+                <Include-Resource>
+                  ${project.build.directory}/unpacked/
+                </Include-Resource>
+
+                <Bundle-NativeCode>
+                  lwjgl_stb32.dll;
+                  osname=Windows; processor=x86,
+
+                  lwjgl_stb.dll;
+                  osname=Windows; processor=x86-64,
+
+                  liblwjgl_stb.so;
+                  osname=Linux; processor=x86-64,
+
+                  liblwjgl_stb.dylib;
+                  osname=MacOSX; processor=x86-64
+                </Bundle-NativeCode>
+
+                <Specification-Title>Lightweight Java Game Library</Specification-Title>
+                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Vendor>lwjgl.org</Specification-Vendor>
+                <Implementation-Title>lwjgl</Implementation-Title>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+                <Sealed>true</Sealed>
+              </instructions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
