@@ -220,9 +220,6 @@
             <configuration>
               <instructions>
                 <Import-Package>
-                  <!-- LWJGL states that sun.misc.Unsafe is optional but recommended -->
-                  sun.misc; resolution:="optional",
-
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
                   org.lwjgl.system,
