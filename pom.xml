@@ -16,6 +16,7 @@
 
   <modules>
     <module>org.lwjgl.assimp</module>
+    <module>org.lwjgl.bgfx</module>
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
     <module>org.lwjgl.jawt</module>
@@ -587,6 +588,36 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-nanovg</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-bgfx</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-bgfx</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-bgfx</artifactId>
+        <classifier>natives-linux</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-bgfx</artifactId>
+        <classifier>natives-macos</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-bgfx</artifactId>
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
