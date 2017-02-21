@@ -12,9 +12,9 @@
   </parent>
 
   <packaging>bundle</packaging>
-  <artifactId>org.lwjgl.glfw</artifactId>
-  <name>org.lwjgl.glfw</name>
-  <description>LWJGL OSGi bundle (GLFW bindings)</description>
+  <artifactId>org.lwjgl.opengles</artifactId>
+  <name>org.lwjgl.opengles</name>
+  <description>LWJGL OSGi bundle (OpenGL ES bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
@@ -23,40 +23,38 @@
       <artifactId>org.lwjgl.lwjgl</artifactId>
       <version>${project.version}</version>
     </dependency>
-
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>org.lwjgl.egl</artifactId>
       <version>${project.version}</version>
-      <optional>true</optional>
     </dependency>
 
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-glfw</artifactId>
+      <artifactId>lwjgl-opengles</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-glfw</artifactId>
+      <artifactId>lwjgl-opengles</artifactId>
       <scope>provided</scope>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-glfw</artifactId>
+      <artifactId>lwjgl-opengles</artifactId>
       <classifier>natives-linux</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-glfw</artifactId>
+      <artifactId>lwjgl-opengles</artifactId>
       <classifier>natives-macos</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-glfw</artifactId>
+      <artifactId>lwjgl-opengles</artifactId>
       <classifier>natives-windows</classifier>
       <scope>provided</scope>
     </dependency>
@@ -70,9 +68,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
-          <!-- Unpack GLFW natives -->
+          <!-- Unpack OpenGL natives -->
           <execution>
-            <id>unpack-natives-glfw-linux</id>
+            <id>unpack-natives-opengles-linux</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -80,19 +78,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-glfw</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opengles</includeArtifactIds>
               <includeClassifiers>natives-linux</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
                 **\/*.so,
                 **\/*.so.sha1
               </includes>
-              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/linux/x86_64</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-glfw-windows-x86</id>
+            <id>unpack-natives-opengles-windows-x86</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -100,19 +98,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-glfw</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opengles</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                glfw32.dll,
-                glfw32.dll.sha1
+                lwjgl_opengles32.dll,
+                lwjgl_opengles32.dll.sha1
               </includes>
-              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-glfw-windows-x86_64</id>
+            <id>unpack-natives-opengles-windows-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -120,19 +118,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-glfw</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opengles</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                glfw.dll,
-                glfw.dll.sha1
+                lwjgl_opengles.dll,
+                lwjgl_opengles.dll.sha1
               </includes>
-              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-glfw-macos-x86_64</id>
+            <id>unpack-natives-opengles-macos-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -140,14 +138,14 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-glfw</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opengles</includeArtifactIds>
               <includeClassifiers>natives-macos</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
                 **\/*.dylib,
                 **\/*.dylib.sha1
               </includes>
-              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/osx/x86_64</markersDirectory>
             </configuration>
           </execution>
@@ -161,7 +159,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-glfw</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opengles</includeArtifactIds>
               <includeClassifiers>sources</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>**\/*</includes>
@@ -228,19 +226,17 @@
                   org.lwjgl,
                   org.lwjgl.system,
                   org.lwjgl.system.*,
-
-                  <!-- TODO: Optional dependency on Vulkan -->
-                  org.lwjgl.egl; resolution:="optional"
+                  org.lwjgl.egl
                 </Import-Package>
 
                 <!-- Do not include Java 9 classes from META-INF due to -->
                 <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
                 <Embed-Dependency>
-                  artifactId=lwjgl-glfw;classifier=!sources;inline=!META-INF/**/*.class
+                  artifactId=lwjgl-opengles;classifier=!sources;inline=!META-INF/**/*.class
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.glfw
+                  org.lwjgl.opengles
                 </Export-Package>
 
                 <Include-Resource>
@@ -248,16 +244,16 @@
                 </Include-Resource>
 
                 <Bundle-NativeCode>
-                  glfw32.dll;
+                  lwjgl_opengles32.dll;
                   osname=Windows; processor=x86,
 
-                  glfw.dll;
+                  lwjgl_opengles.dll;
                   osname=Windows; processor=x86-64,
 
-                  libglfw.so;
+                  liblwjgl_opengles.so;
                   osname=Linux; processor=x86-64,
 
-                  libglfw.dylib;
+                  liblwjgl_opengles.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 

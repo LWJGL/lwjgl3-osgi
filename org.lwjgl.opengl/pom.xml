@@ -221,6 +221,8 @@
                   org.lwjgl,
                   org.lwjgl.system,
                   org.lwjgl.system.*
+
+                  <!-- TODO: Optional dependency on OpenCL -->
                 </Import-Package>
 
                 <!-- Do not include Java 9 classes from META-INF due to -->
