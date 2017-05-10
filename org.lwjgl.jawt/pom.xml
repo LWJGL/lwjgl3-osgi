@@ -6,7 +6,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.io7m.bundles</groupId>
+    <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
     <version>3.1.2-SNAPSHOT</version>
   </parent>
