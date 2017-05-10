@@ -226,6 +226,8 @@
             <id>default-bundle</id>
             <configuration>
               <instructions>
+                <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+
                 <Import-Package>
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,

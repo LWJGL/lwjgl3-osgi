@@ -338,6 +338,8 @@
             <id>default-bundle</id>
             <configuration>
               <instructions>
+                <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+
                 <Import-Package>
                   <!-- LWJGL states that sun.misc.Unsafe is optional but recommended -->
                   sun.misc; resolution:="optional"
