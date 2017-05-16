@@ -8,3 +8,21 @@ the [LWJGL](https://lwjgl.org) library.
 
 ![LWJGL](./src/site/resources/lwjgl.jpg?raw=true)
 
+## Usage
+
+Use dependencies in the `org.lwjgl.osgi` groupId as you would with
+the ordinary LWJGL libraries:
+
+```
+<dependency>
+  <groupId>org.lwjgl.osgi</groupId>
+  <artifactId>org.lwjgl.glfw</artifactId>
+  <version>3.1.2</version>
+</dependency>
+<dependency>
+  <groupId>org.lwjgl.osgi</groupId>
+  <artifactId>org.lwjgl.opengl</artifactId>
+  <version>3.1.2</version>
+</dependency>
+```
+
