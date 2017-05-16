@@ -46,7 +46,6 @@ the ordinary LWJGL libraries:
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.opengles](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.opengles%7C3.1.2%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.ovr](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.ovr%7C3.1.2%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.par](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.par%7C3.1.2%7Cjar) |
-| [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.parent.iml](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.parent.iml%7C3.1.2%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.sse](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.sse%7C3.1.2%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.stb](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.stb%7C3.1.2%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.tinyfd](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.tinyfd%7C3.1.2%7Cjar) |

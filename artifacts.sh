@@ -9,6 +9,12 @@ EOF
 
 for f in org.lwjgl.*
 do
+  echo "$f" | grep org.lwjgl.parent >/dev/null
+  if [ $? -eq 0 ]
+  then
+    continue
+  fi
+
   cat <<EOF
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [$f](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7C$f%7C${VERSION}%7Cjar) |
 EOF
