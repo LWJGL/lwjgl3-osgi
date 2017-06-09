@@ -238,10 +238,10 @@
 
                 <Bundle-NativeCode>
                   lwjgl_nfd32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   lwjgl_nfd.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   liblwjgl_nfd.so;
                   osname=Linux; processor=x86-64,
