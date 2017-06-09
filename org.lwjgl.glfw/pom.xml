@@ -254,10 +254,10 @@
 
                 <Bundle-NativeCode>
                   glfw32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   glfw.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   libglfw.so;
                   osname=Linux; processor=x86-64,

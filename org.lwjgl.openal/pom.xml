@@ -238,10 +238,10 @@
 
                 <Bundle-NativeCode>
                   OpenAL32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   OpenAL.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   libopenal.so;
                   osname=Linux; processor=x86-64,

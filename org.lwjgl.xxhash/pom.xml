@@ -238,10 +238,10 @@
 
                 <Bundle-NativeCode>
                   lwjgl_xxhash32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   lwjgl_xxhash.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   liblwjgl_xxhash.so;
                   osname=Linux; processor=x86-64,

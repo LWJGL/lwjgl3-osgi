@@ -238,10 +238,10 @@
 
                 <Bundle-NativeCode>
                   lwjgl_stb32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   lwjgl_stb.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   liblwjgl_stb.so;
                   osname=Linux; processor=x86-64,

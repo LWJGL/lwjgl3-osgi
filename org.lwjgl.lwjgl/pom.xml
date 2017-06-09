@@ -364,11 +364,11 @@
                 <Bundle-NativeCode>
                   lwjgl32.dll;
                   jemalloc32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   lwjgl.dll;
                   jemalloc.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   liblwjgl.so;
                   libjemalloc.so;
