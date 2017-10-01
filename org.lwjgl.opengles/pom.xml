@@ -220,6 +220,10 @@
               <instructions>
                 <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 
+                <Require-Capability>
+                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
+                </Require-Capability>
+
                 <Import-Package>
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
