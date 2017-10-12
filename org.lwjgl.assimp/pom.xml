@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.1.2</version>
+    <version>3.1.3</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -238,10 +238,10 @@
 
                 <Bundle-NativeCode>
                   assimp32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   assimp.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   libassimp.so;
                   osname=Linux; processor=x86-64,
@@ -257,6 +257,10 @@
                 <Implementation-Version>${project.version}</Implementation-Version>
                 <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
                 <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+                <Require-Capability>
+                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
+                </Require-Capability>
 
                 <Sealed>true</Sealed>
               </instructions>

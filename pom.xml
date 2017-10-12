@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.parent</artifactId>
-  <version>3.1.2</version>
+  <version>3.1.3</version>
 
   <packaging>pom</packaging>
   <name>org.lwjgl.parent</name>
@@ -41,7 +41,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <org.lwjgl.version>3.1.2</org.lwjgl.version>
+    <org.lwjgl.version>3.1.3</org.lwjgl.version>
   </properties>
 
   <licenses>
@@ -719,7 +719,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
           <extensions>true</extensions>
         </plugin>
 

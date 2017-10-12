@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.1.2</version>
+    <version>3.1.3</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -221,6 +221,10 @@
               <instructions>
                 <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 
+                <Require-Capability>
+                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
+                </Require-Capability>
+
                 <Import-Package>
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
@@ -246,10 +250,10 @@
 
                 <Bundle-NativeCode>
                   lwjgl_opengl32.dll;
-                  osname=Windows; processor=x86,
+                  osname=Win32; processor=x86,
 
                   lwjgl_opengl.dll;
-                  osname=Windows; processor=x86-64,
+                  osname=Win32; processor=x86-64,
 
                   liblwjgl_opengl.so;
                   osname=Linux; processor=x86-64,
