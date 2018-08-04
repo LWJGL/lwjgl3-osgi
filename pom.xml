@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.parent</artifactId>
-  <version>3.1.6</version>
+  <version>3.2.0</version>
 
   <packaging>pom</packaging>
   <name>org.lwjgl.parent</name>
@@ -27,13 +27,14 @@
     <module>org.lwjgl.nuklear</module>
     <module>org.lwjgl.openal</module>
     <module>org.lwjgl.opencl</module>
-    <module>org.lwjgl.opengl</module>
     <module>org.lwjgl.opengles</module>
+    <module>org.lwjgl.opengl</module>
     <module>org.lwjgl.ovr</module>
     <module>org.lwjgl.par</module>
     <module>org.lwjgl.sse</module>
     <module>org.lwjgl.stb</module>
     <module>org.lwjgl.tinyfd</module>
+    <module>org.lwjgl.vma</module>
     <module>org.lwjgl.vulkan</module>
     <module>org.lwjgl.xxhash</module>
   </modules>
@@ -41,7 +42,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <org.lwjgl.version>3.1.6</org.lwjgl.version>
+    <org.lwjgl.version>3.2.0</org.lwjgl.version>
   </properties>
 
   <licenses>
@@ -653,6 +654,36 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-tinyfd</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vma</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vma</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vma</artifactId>
+        <classifier>natives-linux</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vma</artifactId>
+        <classifier>natives-macos</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vma</artifactId>
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
