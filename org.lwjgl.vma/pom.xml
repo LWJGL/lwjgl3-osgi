@@ -12,9 +12,9 @@
   </parent>
 
   <packaging>bundle</packaging>
-  <artifactId>org.lwjgl.ovr</artifactId>
-  <name>org.lwjgl.ovr</name>
-  <description>LWJGL OSGi bundle (OVR bindings)</description>
+  <artifactId>org.lwjgl.vma</artifactId>
+  <name>org.lwjgl.vma</name>
+  <description>LWJGL OSGi bundle (Vulkan Memory Allocator bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
@@ -26,18 +26,30 @@
 
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-ovr</artifactId>
+      <artifactId>lwjgl-vma</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-ovr</artifactId>
+      <artifactId>lwjgl-vma</artifactId>
       <scope>provided</scope>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-ovr</artifactId>
+      <artifactId>lwjgl-vma</artifactId>
+      <classifier>natives-linux</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-vma</artifactId>
+      <classifier>natives-macos</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-vma</artifactId>
       <classifier>natives-windows</classifier>
       <scope>provided</scope>
     </dependency>
@@ -51,9 +63,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
-          <!-- Unpack OVR natives -->
+          <!-- Unpack natives -->
           <execution>
-            <id>unpack-natives-ovr-windows-x86</id>
+            <id>unpack-natives-vma-linux</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -61,19 +73,39 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-ovr</includeArtifactIds>
+              <includeArtifactIds>lwjgl-vma</includeArtifactIds>
+              <includeClassifiers>natives-linux</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                **\/*.so,
+                **\/*.so.sha1
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/linux/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-vma-windows-x86</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-vma</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                lwjgl_ovr32.dll,
-                lwjgl_ovr32.dll.sha1
+                lwjgl_vma32.dll,
+                lwjgl_vma32.dll.sha1
               </includes>
-              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-ovr-windows-x86_64</id>
+            <id>unpack-natives-vma-windows-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -81,15 +113,35 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-ovr</includeArtifactIds>
+              <includeArtifactIds>lwjgl-vma</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                lwjgl_ovr.dll,
-                lwjgl_ovr.dll.sha1
+                lwjgl_vma.dll,
+                lwjgl_vma.dll.sha1
               </includes>
-              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-vma-macos-x86_64</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-vma</includeArtifactIds>
+              <includeClassifiers>natives-macos</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                **\/*.dylib,
+                **\/*.dylib.sha1
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/osx/x86_64</markersDirectory>
             </configuration>
           </execution>
 
@@ -102,7 +154,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-ovr</includeArtifactIds>
+              <includeArtifactIds>lwjgl-vma</includeArtifactIds>
               <includeClassifiers>sources</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>**\/*</includes>
@@ -177,11 +229,11 @@
                 <!-- Do not include Java 9 classes from META-INF due to -->
                 <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
                 <Embed-Dependency>
-                  artifactId=lwjgl-ovr;classifier=!sources;inline=!META-INF/**/*.class
+                  artifactId=lwjgl-vma;classifier=!sources;inline=!META-INF/**/*.class
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.ovr
+                  org.lwjgl.util.vma
                 </Export-Package>
 
                 <Include-Resource>
@@ -189,11 +241,17 @@
                 </Include-Resource>
 
                 <Bundle-NativeCode>
-                  lwjgl_ovr32.dll;
+                  lwjgl_vma32.dll;
                   osname=Win32; processor=x86,
 
-                  lwjgl_ovr.dll;
-                  osname=Win32; processor=x86-64
+                  lwjgl_vma.dll;
+                  osname=Win32; processor=x86-64,
+
+                  liblwjgl_vma.so;
+                  osname=Linux; processor=x86-64,
+
+                  liblwjgl_vma.dylib;
+                  osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 
                 <Specification-Title>Lightweight Java Game Library</Specification-Title>
