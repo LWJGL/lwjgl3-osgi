@@ -43,6 +43,7 @@
     <module>org.lwjgl.stb</module>
     <module>org.lwjgl.tinyexr</module>
     <module>org.lwjgl.tinyfd</module>
+    <module>org.lwjgl.tootle</module>
     <module>org.lwjgl.vma</module>
     <module>org.lwjgl.vulkan</module>
     <module>org.lwjgl.xxhash</module>
@@ -605,6 +606,36 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-zstd</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tootle</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tootle</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tootle</artifactId>
+        <classifier>natives-linux</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tootle</artifactId>
+        <classifier>natives-macos</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tootle</artifactId>
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
