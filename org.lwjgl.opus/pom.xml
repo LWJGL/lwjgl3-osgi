@@ -14,7 +14,7 @@
   <packaging>bundle</packaging>
   <artifactId>org.lwjgl.opus</artifactId>
   <name>org.lwjgl.opus</name>
-  <description>LWJGL OSGi bundle (Meow bindings)</description>
+  <description>LWJGL OSGi bundle (Opus bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>

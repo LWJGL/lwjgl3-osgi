@@ -14,7 +14,7 @@
   <packaging>bundle</packaging>
   <artifactId>org.lwjgl.tinyexr</artifactId>
   <name>org.lwjgl.tinyexr</name>
-  <description>LWJGL OSGi bundle (Meow bindings)</description>
+  <description>LWJGL OSGi bundle (TinyEXR bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
