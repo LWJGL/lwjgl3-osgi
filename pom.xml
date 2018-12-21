@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.parent</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
 
   <packaging>pom</packaging>
   <name>org.lwjgl.parent</name>
@@ -17,6 +17,7 @@
   <modules>
     <module>org.lwjgl.assimp</module>
     <module>org.lwjgl.bgfx</module>
+    <module>org.lwjgl.cuda</module>
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
     <module>org.lwjgl.jawt</module>
@@ -42,7 +43,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <org.lwjgl.version>3.2.0</org.lwjgl.version>
+    <org.lwjgl.version>3.2.1</org.lwjgl.version>
   </properties>
 
   <licenses>
@@ -127,6 +128,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-cuda</artifactId>
         <version>${org.lwjgl.version}</version>
       </dependency>
 

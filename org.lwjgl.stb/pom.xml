@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
   </parent>
 
   <packaging>bundle</packaging>
