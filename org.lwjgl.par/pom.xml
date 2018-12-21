@@ -226,10 +226,8 @@
                   org.lwjgl.system.*
                 </Import-Package>
 
-                <!-- Do not include Java 9 classes from META-INF due to -->
-                <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
                 <Embed-Dependency>
-                  artifactId=lwjgl-par;classifier=!sources;inline=!META-INF/**/*.class
+                  artifactId=lwjgl-par;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
 
                 <Export-Package>

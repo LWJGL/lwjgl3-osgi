@@ -234,10 +234,8 @@
                   org.lwjgl.opencl; resolution:="optional"
                 </Import-Package>
 
-                <!-- Do not include Java 9 classes from META-INF due to -->
-                <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
                 <Embed-Dependency>
-                  artifactId=lwjgl-opengl;classifier=!sources;inline=!META-INF/**/*.class
+                  artifactId=lwjgl-opengl;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
 
                 <Export-Package>
