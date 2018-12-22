@@ -24,6 +24,9 @@ the ordinary LWJGL libraries:
 </dependency>
 ```
 
+See the [com.io7m.lwjgl.examples](https://github.com/io7m/com.io7m.lwjgl.examples) project
+for some example OSGi components using each of the various libraries.
+
 ## Available Bundles
 
 | groupId | Artifact |
