@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -226,10 +226,8 @@
                   org.lwjgl.system.*
                 </Import-Package>
 
-                <!-- Do not include Java 9 classes from META-INF due to -->
-                <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
                 <Embed-Dependency>
-                  artifactId=lwjgl-vma;classifier=!sources;inline=!META-INF/**/*.class
+                  artifactId=lwjgl-vma;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
 
                 <Export-Package>

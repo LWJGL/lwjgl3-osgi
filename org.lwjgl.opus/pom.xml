@@ -12,9 +12,9 @@
   </parent>
 
   <packaging>bundle</packaging>
-  <artifactId>org.lwjgl.nanovg</artifactId>
-  <name>org.lwjgl.nanovg</name>
-  <description>LWJGL OSGi bundle (NanoVG bindings)</description>
+  <artifactId>org.lwjgl.opus</artifactId>
+  <name>org.lwjgl.opus</name>
+  <description>LWJGL OSGi bundle (Opus bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
@@ -26,30 +26,30 @@
 
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-nanovg</artifactId>
+      <artifactId>lwjgl-opus</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-nanovg</artifactId>
+      <artifactId>lwjgl-opus</artifactId>
       <scope>provided</scope>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-nanovg</artifactId>
+      <artifactId>lwjgl-opus</artifactId>
       <classifier>natives-linux</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-nanovg</artifactId>
+      <artifactId>lwjgl-opus</artifactId>
       <classifier>natives-macos</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-nanovg</artifactId>
+      <artifactId>lwjgl-opus</artifactId>
       <classifier>natives-windows</classifier>
       <scope>provided</scope>
     </dependency>
@@ -65,7 +65,7 @@
         <executions>
           <!-- Unpack natives -->
           <execution>
-            <id>unpack-natives-nanovg-linux</id>
+            <id>unpack-natives-opus-linux</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -73,7 +73,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-nanovg</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opus</includeArtifactIds>
               <includeClassifiers>natives-linux</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -85,7 +85,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-nanovg-windows-x86</id>
+            <id>unpack-natives-opus-windows-x86</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -93,19 +93,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-nanovg</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opus</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                lwjgl_nanovg32.dll,
-                lwjgl_nanovg32.dll.sha1
+                opus32.dll,
+                opus32.dll.sha1
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-nanovg-windows-x86_64</id>
+            <id>unpack-natives-opus-windows-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -113,19 +113,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-nanovg</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opus</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                lwjgl_nanovg.dll,
-                lwjgl_nanovg.dll.sha1
+                opus.dll,
+                opus.dll.sha1
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-nanovg-macos-x86_64</id>
+            <id>unpack-natives-opus-macos-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -133,7 +133,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-nanovg</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opus</includeArtifactIds>
               <includeClassifiers>natives-macos</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -154,7 +154,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-nanovg</includeArtifactIds>
+              <includeArtifactIds>lwjgl-opus</includeArtifactIds>
               <includeClassifiers>sources</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>**\/*</includes>
@@ -215,10 +215,6 @@
               <instructions>
                 <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 
-                <Require-Capability>
-                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
-                </Require-Capability>
-
                 <Import-Package>
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
@@ -227,11 +223,11 @@
                 </Import-Package>
 
                 <Embed-Dependency>
-                  artifactId=lwjgl-nanovg;classifier=!sources;inline=!*.jar
+                  artifactId=lwjgl-opus;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.nanovg
+                  org.lwjgl.util.opus
                 </Export-Package>
 
                 <Include-Resource>
@@ -239,16 +235,16 @@
                 </Include-Resource>
 
                 <Bundle-NativeCode>
-                  lwjgl_nanovg32.dll;
+                  opus32.dll;
                   osname=Win32; processor=x86,
 
-                  lwjgl_nanovg.dll;
+                  opus.dll;
                   osname=Win32; processor=x86-64,
 
-                  liblwjgl_nanovg.so;
+                  libopus.so;
                   osname=Linux; processor=x86-64,
 
-                  liblwjgl_nanovg.dylib;
+                  libopus.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 
@@ -259,6 +255,10 @@
                 <Implementation-Version>${project.version}</Implementation-Version>
                 <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
                 <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+                <Require-Capability>
+                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
+                </Require-Capability>
 
                 <Sealed>true</Sealed>
               </instructions>

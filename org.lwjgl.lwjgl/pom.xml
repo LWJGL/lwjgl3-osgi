@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -345,20 +345,18 @@
                 </Require-Capability>
 
                 <Import-Package>
-                  <!-- LWJGL states that sun.misc.Unsafe is optional but recommended -->
-                  sun.misc; resolution:="optional"
+                  sun.misc
                 </Import-Package>
 
-                <!-- Do not include Java 9 classes from META-INF due to -->
-                <!-- https://issues.apache.org/jira/browse/FELIX-5527 -->
                 <Embed-Dependency>
-                  artifactId=lwjgl;classifier=!sources;inline=!META-INF/**/*.class,
-                  artifactId=lwjgl-jemalloc;classifier=!sources;inline=!META-INF/**/*.class
+                  artifactId=lwjgl;classifier=!sources;inline=**/*.class,
+                  artifactId=lwjgl-jemalloc;classifier=!sources;inline=**/*.class
                 </Embed-Dependency>
 
                 <Export-Package>
                   org.lwjgl,
-                  org.lwjgl.*
+                  org.lwjgl.system,
+                  org.lwjgl.system.*
                 </Export-Package>
 
                 <Include-Resource>

@@ -12,9 +12,9 @@
   </parent>
 
   <packaging>bundle</packaging>
-  <artifactId>org.lwjgl.egl</artifactId>
-  <name>org.lwjgl.egl</name>
-  <description>LWJGL OSGi bundle (EGL bindings)</description>
+  <artifactId>org.lwjgl.cuda</artifactId>
+  <name>org.lwjgl.cuda</name>
+  <description>LWJGL OSGi bundle (CUDA bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
@@ -26,7 +26,7 @@
 
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-egl</artifactId>
+      <artifactId>lwjgl-cuda</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -48,7 +48,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-egl</includeArtifactIds>
+              <includeArtifactIds>lwjgl-cuda</includeArtifactIds>
               <includeClassifiers>sources</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>**\/*</includes>
@@ -121,11 +121,11 @@
                 </Import-Package>
 
                 <Embed-Dependency>
-                  artifactId=lwjgl-egl;classifier=!sources;inline=!*.jar
+                  artifactId=lwjgl-cuda;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.egl
+                  org.lwjgl.cuda
                 </Export-Package>
 
                 <Specification-Title>Lightweight Java Game Library</Specification-Title>
