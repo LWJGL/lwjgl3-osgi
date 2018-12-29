@@ -249,7 +249,8 @@
                   org.lwjgl,
                   org.lwjgl.system,
                   org.lwjgl.system.*,
-                  org.lwjgl.egl
+                  org.lwjgl.egl,
+                  sun.misc
                 </Import-Package>
 
                 <Embed-Dependency>

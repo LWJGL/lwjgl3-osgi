@@ -239,7 +239,8 @@
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
                   org.lwjgl.system,
-                  org.lwjgl.system.*
+                  org.lwjgl.system.*,
+                  sun.misc
                 </Import-Package>
 
                 <Embed-Dependency>

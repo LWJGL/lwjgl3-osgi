@@ -250,6 +250,7 @@
                   org.lwjgl,
                   org.lwjgl.system,
                   org.lwjgl.system.*,
+                  sun.misc
 
                   org.lwjgl.opencl; resolution:="optional"
                 </Import-Package>
