@@ -37,6 +37,7 @@ for some example OSGi components using each of the various libraries.
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.egl](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.egl%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.glfw](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.glfw%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.jawt](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.jawt%7C3.2.0%7Cjar) |
+| [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.jemalloc](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.jemalloc%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.libdivide](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.libdivide%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.lmdb](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.lmdb%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.lwjgl](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.lwjgl%7C3.2.0%7Cjar) |
