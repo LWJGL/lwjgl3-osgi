@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.1</version>
+    <version>3.2.1.1</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -287,6 +287,26 @@
               <markersDirectory>${project.build.directory}/unpack-source-markers</markersDirectory>
             </configuration>
           </execution>
+
+          <execution>
+            <id>unpack-module-descriptor</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.lwjgl</groupId>
+                  <artifactId>lwjgl</artifactId>
+                </artifactItem>
+              </artifactItems>
+              <includes>**\/module-info.class</includes>
+              <outputDirectory>${project.build.directory}/unpacked-module</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpacked-module-markers</markersDirectory>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -348,19 +368,20 @@
                   sun.misc
                 </Import-Package>
 
-                <Embed-Dependency>
-                  artifactId=lwjgl;classifier=!sources;inline=**/*.class,
-                  artifactId=lwjgl-jemalloc;classifier=!sources;inline=**/*.class
-                </Embed-Dependency>
-
                 <Export-Package>
                   org.lwjgl,
                   org.lwjgl.system,
                   org.lwjgl.system.*
                 </Export-Package>
 
+                <Embed-Dependency>
+                  artifactId=lwjgl-jemalloc;classifier=!sources;inline=**/*.class,
+                  artifactId=lwjgl;classifier=!sources;inline=**/*.class
+                </Embed-Dependency>
+
                 <Include-Resource>
-                  ${project.build.directory}/unpacked/
+                  ${project.build.directory}/unpacked/,
+                  ${project.build.directory}/unpacked-module/
                 </Include-Resource>
 
                 <Bundle-NativeCode>
