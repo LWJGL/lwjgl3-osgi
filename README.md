@@ -31,11 +31,13 @@ for some example OSGi components using each of the various libraries.
 
 ### Allocator
 
-Currently, when running in an OSGi container [LWJGL will use
-the platform's default allocator instead of the (typically preferred)
+Currently, when running in an OSGi container [LWJGL will use the
+platform's default allocator instead of the (typically preferred)
 jemalloc](https://github.com/LWJGL/lwjgl3-osgi/issues/10#issuecomment-450435669).
-This isn't likely to be a problem for the majority of users. A workaround
-is to manually set the allocator using the [Configuration](https://javadoc.lwjgl.org/org/lwjgl/system/Configuration.html)
+This isn't likely to be a problem for the
+majority of users. A workaround if it _is_ a
+problem for you is to manually set the allocator using the
+[Configuration](https://javadoc.lwjgl.org/org/lwjgl/system/Configuration.html)
 class prior to doing anything else with LWJGL.
 
 ## Available Bundles
