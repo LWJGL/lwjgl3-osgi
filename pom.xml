@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.parent</artifactId>
-  <version>3.2.1</version>
+  <version>3.2.1.1</version>
 
   <packaging>pom</packaging>
   <name>org.lwjgl.parent</name>
@@ -21,6 +21,7 @@
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
     <module>org.lwjgl.jawt</module>
+    <module>org.lwjgl.jemalloc</module>
     <module>org.lwjgl.libdivide</module>
     <module>org.lwjgl.lmdb</module>
     <module>org.lwjgl.lwjgl</module>

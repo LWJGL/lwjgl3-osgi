@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.1</version>
+    <version>3.2.1.1</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -162,6 +162,26 @@
               <markersDirectory>${project.build.directory}/unpack-source-markers</markersDirectory>
             </configuration>
           </execution>
+
+          <execution>
+            <id>unpack-module-descriptor</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.lwjgl</groupId>
+                  <artifactId>lwjgl-tinyfd</artifactId>
+                </artifactItem>
+              </artifactItems>
+              <includes>**\/module-info.class</includes>
+              <outputDirectory>${project.build.directory}/unpacked-module</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpacked-module-markers</markersDirectory>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -223,7 +243,8 @@
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
                   org.lwjgl.system,
-                  org.lwjgl.system.*
+                  org.lwjgl.system.*,
+                  sun.misc
                 </Import-Package>
 
                 <Embed-Dependency>
@@ -235,7 +256,8 @@
                 </Export-Package>
 
                 <Include-Resource>
-                  ${project.build.directory}/unpacked/
+                  ${project.build.directory}/unpacked/,
+                  ${project.build.directory}/unpacked-module/
                 </Include-Resource>
 
                 <Bundle-NativeCode>

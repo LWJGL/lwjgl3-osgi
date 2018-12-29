@@ -27,6 +27,19 @@ the ordinary LWJGL libraries:
 See the [com.io7m.lwjgl.examples](https://github.com/io7m/com.io7m.lwjgl.examples) project
 for some example OSGi components using each of the various libraries.
 
+## Limitations
+
+### Allocator
+
+Currently, when running in an OSGi container [LWJGL will use the
+platform's default allocator instead of the (typically preferred)
+jemalloc](https://github.com/LWJGL/lwjgl3-osgi/issues/10#issuecomment-450435669).
+This isn't likely to be a problem for the
+majority of users. A workaround if it _is_ a
+problem for you is to manually set the allocator using the
+[Configuration](https://javadoc.lwjgl.org/org/lwjgl/system/Configuration.html)
+class prior to doing anything else with LWJGL.
+
 ## Available Bundles
 
 | groupId | Artifact |
@@ -37,6 +50,7 @@ for some example OSGi components using each of the various libraries.
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.egl](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.egl%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.glfw](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.glfw%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.jawt](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.jawt%7C3.2.0%7Cjar) |
+| [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.jemalloc](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.jemalloc%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.libdivide](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.libdivide%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.lmdb](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.lmdb%7C3.2.0%7Cjar) |
 | [org.lwjgl.osgi](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.lwjgl.osgi%22) | [org.lwjgl.lwjgl](http://search.maven.org/#artifactdetails%7Corg.lwjgl.osgi%7Corg.lwjgl.lwjgl%7C3.2.0%7Cjar) |
