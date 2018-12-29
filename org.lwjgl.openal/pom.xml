@@ -162,6 +162,26 @@
               <markersDirectory>${project.build.directory}/unpack-source-markers</markersDirectory>
             </configuration>
           </execution>
+
+          <execution>
+            <id>unpack-module-descriptor</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.lwjgl</groupId>
+                  <artifactId>lwjgl-openal</artifactId>
+                </artifactItem>
+              </artifactItems>
+              <includes>**\/module-info.class</includes>
+              <outputDirectory>${project.build.directory}/unpacked-module</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpacked-module-markers</markersDirectory>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -235,7 +255,8 @@
                 </Export-Package>
 
                 <Include-Resource>
-                  ${project.build.directory}/unpacked/
+                  ${project.build.directory}/unpacked/,
+                  ${project.build.directory}/unpacked-module/
                 </Include-Resource>
 
                 <Bundle-NativeCode>
