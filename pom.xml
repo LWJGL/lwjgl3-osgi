@@ -21,6 +21,7 @@
     <module>org.lwjgl.egl</module>
     <module>org.lwjgl.glfw</module>
     <module>org.lwjgl.jawt</module>
+    <module>org.lwjgl.jemalloc</module>
     <module>org.lwjgl.libdivide</module>
     <module>org.lwjgl.lmdb</module>
     <module>org.lwjgl.lwjgl</module>

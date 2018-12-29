@@ -12,38 +12,44 @@
   </parent>
 
   <packaging>bundle</packaging>
-  <artifactId>org.lwjgl.lwjgl</artifactId>
-  <name>org.lwjgl.lwjgl</name>
-  <description>LWJGL OSGi bundle (Core LWJGL bundle)</description>
+  <artifactId>org.lwjgl.jemalloc</artifactId>
+  <name>org.lwjgl.jemalloc</name>
+  <description>LWJGL OSGi bundle (jemalloc bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>org.lwjgl.lwjgl</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl</artifactId>
+      <artifactId>lwjgl-jemalloc</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl</artifactId>
+      <artifactId>lwjgl-jemalloc</artifactId>
       <scope>provided</scope>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl</artifactId>
+      <artifactId>lwjgl-jemalloc</artifactId>
       <classifier>natives-linux</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl</artifactId>
+      <artifactId>lwjgl-jemalloc</artifactId>
       <classifier>natives-macos</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl</artifactId>
+      <artifactId>lwjgl-jemalloc</artifactId>
       <classifier>natives-windows</classifier>
       <scope>provided</scope>
     </dependency>
@@ -57,10 +63,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
-
-          <!-- Unpack LWJGL core natives -->
+          <!-- Unpack natives -->
           <execution>
-            <id>unpack-natives-lwjgl-linux</id>
+            <id>unpack-natives-jemalloc-linux</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -68,19 +73,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl</includeArtifactIds>
+              <includeArtifactIds>lwjgl-jemalloc</includeArtifactIds>
               <includeClassifiers>natives-linux</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                liblwjgl.so,
-                liblwjgl.so.sha1
+                **\/*.so,
+                **\/*.so.sha1
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/linux/x86_64</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-lwjgl-windows-x86</id>
+            <id>unpack-natives-jemalloc-windows-x86</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -88,19 +93,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl</includeArtifactIds>
+              <includeArtifactIds>lwjgl-jemalloc</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                lwjgl32.dll,
-                lwjgl32.dll.sha1
+                jemalloc32.dll,
+                jemalloc32.dll.sha1
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-lwjgl-windows-x86_64</id>
+            <id>unpack-natives-jemalloc-windows-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -108,19 +113,19 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl</includeArtifactIds>
+              <includeArtifactIds>lwjgl-jemalloc</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                lwjgl.dll,
-                lwjgl.dll.sha1
+                jemalloc.dll,
+                jemalloc.dll.sha1
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-lwjgl-macos-x86_64</id>
+            <id>unpack-natives-jemalloc-macos-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -128,7 +133,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl</includeArtifactIds>
+              <includeArtifactIds>lwjgl-jemalloc</includeArtifactIds>
               <includeClassifiers>natives-macos</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -141,7 +146,7 @@
           </execution>
 
           <execution>
-            <id>unpack-core-sources</id>
+            <id>unpack-sources</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -149,7 +154,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl</includeArtifactIds>
+              <includeArtifactIds>lwjgl-jemalloc</includeArtifactIds>
               <includeClassifiers>sources</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>**\/*</includes>
@@ -169,7 +174,7 @@
               <artifactItems>
                 <artifactItem>
                   <groupId>org.lwjgl</groupId>
-                  <artifactId>lwjgl</artifactId>
+                  <artifactId>lwjgl-jemalloc</artifactId>
                 </artifactItem>
               </artifactItems>
               <includes>**\/module-info.class</includes>
@@ -230,23 +235,21 @@
               <instructions>
                 <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 
-                <Require-Capability>
-                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
-                </Require-Capability>
-
                 <Import-Package>
+                  <!-- Add explicit imports for LWJGL -->
+                  org.lwjgl,
+                  org.lwjgl.system,
+                  org.lwjgl.system.*,
                   sun.misc
                 </Import-Package>
 
-                <Export-Package>
-                  org.lwjgl,
-                  org.lwjgl.system,
-                  org.lwjgl.system.*
-                </Export-Package>
-
                 <Embed-Dependency>
-                  artifactId=lwjgl;classifier=!sources;inline=**/*.class
+                  artifactId=lwjgl-jemalloc;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
+
+                <Export-Package>
+                  org.lwjgl.system.jemalloc
+                </Export-Package>
 
                 <Include-Resource>
                   ${project.build.directory}/unpacked/,
@@ -254,16 +257,16 @@
                 </Include-Resource>
 
                 <Bundle-NativeCode>
-                  lwjgl32.dll;
+                  jemalloc32.dll;
                   osname=Win32; processor=x86,
 
-                  lwjgl.dll;
+                  jemalloc.dll;
                   osname=Win32; processor=x86-64,
 
-                  liblwjgl.so;
+                  libjemalloc.so;
                   osname=Linux; processor=x86-64,
 
-                  liblwjgl.dylib;
+                  libjemalloc.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 
@@ -274,6 +277,10 @@
                 <Implementation-Version>${project.version}</Implementation-Version>
                 <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
                 <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+                <Require-Capability>
+                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
+                </Require-Capability>
 
                 <Sealed>true</Sealed>
               </instructions>
