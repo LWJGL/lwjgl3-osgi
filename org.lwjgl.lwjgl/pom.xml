@@ -235,7 +235,7 @@
                 </Require-Capability>
 
                 <Import-Package>
-                  sun.misc
+                  sun.misc,
                 </Import-Package>
 
                 <Export-Package>

@@ -118,7 +118,7 @@
                   org.lwjgl,
                   org.lwjgl.system,
                   org.lwjgl.system.*,
-                  sun.misc
+                  sun.misc,
                 </Import-Package>
 
                 <Embed-Dependency>

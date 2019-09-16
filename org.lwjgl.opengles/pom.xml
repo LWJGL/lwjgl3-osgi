@@ -250,7 +250,7 @@
                   org.lwjgl.system,
                   org.lwjgl.system.*,
                   org.lwjgl.egl,
-                  sun.misc
+                  sun.misc,
                 </Import-Package>
 
                 <Embed-Dependency>
