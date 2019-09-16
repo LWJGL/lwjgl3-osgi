@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.1.1</version>
+    <version>3.2.1.2</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -235,7 +235,7 @@
                 </Require-Capability>
 
                 <Import-Package>
-                  sun.misc
+                  sun.misc,
                 </Import-Package>
 
                 <Export-Package>
