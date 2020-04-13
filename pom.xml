@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.parent</artifactId>
-  <version>3.2.1.2</version>
+  <version>3.2.3-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>org.lwjgl.parent</name>
@@ -53,9 +53,25 @@
   </modules>
 
   <properties>
+    <build-helper-maven-plugin.version>3.1.0</build-helper-maven-plugin.version>
+    <maven-bundle-plugin.version>4.2.1</maven-bundle-plugin.version>
+    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
+    <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+    <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+    <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
+    <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+    <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+    <org.lwjgl.version>3.2.3</org.lwjgl.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <org.lwjgl.version>3.2.1</org.lwjgl.version>
+    <wagon-ssh-external.version>2.9</wagon-ssh-external.version>
+    <reproducible-build-maven-plugin.version>0.11</reproducible-build-maven-plugin.version>
   </properties>
 
   <licenses>
@@ -142,6 +158,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -190,6 +212,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-opengl</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -220,6 +248,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-opengles</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -250,6 +284,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-openal</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -278,6 +318,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-jemalloc</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-jemalloc</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -322,6 +368,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-glfw</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -352,6 +404,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-stb</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -382,6 +440,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-sse</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -410,6 +474,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-nfd</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nfd</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -430,6 +500,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-ovr</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -458,6 +534,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-xxhash</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-xxhash</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -490,6 +572,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lmdb</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -518,6 +606,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-assimp</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-assimp</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -550,6 +644,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-meow</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -580,6 +680,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-opus</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -610,6 +716,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-zstd</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -640,6 +752,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tootle</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -668,6 +786,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-remotery</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-remotery</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -730,6 +854,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-lz4</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -760,6 +890,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-rpmalloc</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -790,6 +926,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-yoga</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -820,6 +962,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tinyexr</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -848,6 +996,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-libdivide</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-libdivide</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -886,6 +1040,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nuklear</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -914,6 +1074,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-par</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-par</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
 
@@ -946,6 +1112,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-nanovg</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -976,6 +1148,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-bgfx</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -1006,6 +1184,12 @@
         <classifier>natives-windows</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-tinyfd</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>org.lwjgl</groupId>
@@ -1034,6 +1218,12 @@
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-vma</artifactId>
         <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-vma</artifactId>
+        <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
     </dependencies>
@@ -1045,52 +1235,66 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>${maven-clean-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>${maven-deploy-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>${maven-install-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>${maven-resources-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>${maven-source-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>${maven-javadoc-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>${maven-dependency-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>${maven-jar-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>${build-helper-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>io.github.zlika</groupId>
+          <artifactId>reproducible-build-maven-plugin</artifactId>
+          <version>${reproducible-build-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>strip-jars</id>
+              <phase>package</phase>
+              <goals>
+                <goal>strip-jar</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M2</version>
+          <version>${maven-surefire-plugin.version}</version>
           <configuration>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
@@ -1099,7 +1303,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>4.0.0</version>
+          <version>${maven-bundle-plugin.version}</version>
           <extensions>true</extensions>
         </plugin>
 
@@ -1107,7 +1311,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>${maven-compiler-plugin.version}</version>
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
@@ -1118,7 +1322,7 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.8</version>
+          <version>${nexus-staging-maven-plugin.version}</version>
           <extensions>true</extensions>
           <configuration>
             <serverId>sonatype-nexus-staging</serverId>
@@ -1160,31 +1364,29 @@
         </executions>
       </plugin>
 
-      <!-- Create javadoc jar -->
+      <!-- Create jars -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
+        <artifactId>maven-jar-plugin</artifactId>
         <executions>
+
+          <!-- Produce an empty JavaDoc jar. -->
           <execution>
-            <id>attach-javadocs</id>
+            <id>empty-javadoc-jar</id>
             <phase>package</phase>
             <goals>
               <goal>jar</goal>
             </goals>
             <configuration>
-              <!-- LWJGL's javadoc isn't entirely valid, disable linting for now -->
-              <additionalparam>-Xdoclint:none</additionalparam>
-              <failOnError>false</failOnError>
+              <classifier>javadoc</classifier>
+              <excludes>
+                <exclude>**/**</exclude>
+              </excludes>
               <archive>
-                <manifestEntries>
-                  <Specification-Title>Lightweight Java Game Library</Specification-Title>
-                  <Specification-Version>${project.version}</Specification-Version>
-                  <Specification-Vendor>lwjgl.org</Specification-Vendor>
-                  <Implementation-Title>lwjgl</Implementation-Title>
-                  <Implementation-Version>${project.version}</Implementation-Version>
-                  <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
-                  <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                </manifestEntries>
+                <addMavenDescriptor>false</addMavenDescriptor>
+                <manifest>
+                  <addDefaultEntries>false</addDefaultEntries>
+                </manifest>
               </archive>
             </configuration>
           </execution>
@@ -1197,7 +1399,7 @@
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ssh-external</artifactId>
-        <version>2.9</version>
+        <version>${wagon-ssh-external.version}</version>
       </extension>
     </extensions>
   </build>
@@ -1216,7 +1418,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>${maven-gpg-plugin.version}</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>

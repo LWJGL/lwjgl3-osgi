@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.1.2</version>
+    <version>3.2.3-SNAPSHOT</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -142,6 +142,11 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>io.github.zlika</groupId>
+        <artifactId>reproducible-build-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

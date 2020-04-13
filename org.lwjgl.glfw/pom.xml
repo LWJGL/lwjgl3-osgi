@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.1.2</version>
+    <version>3.2.3-SNAPSHOT</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -66,6 +66,12 @@
       <classifier>natives-windows</classifier>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-glfw</artifactId>
+      <classifier>natives-windows-x86</classifier>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -90,8 +96,7 @@
               <includeClassifiers>natives-linux</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                **\/*.so,
-                **\/*.so.sha1
+                linux/x64/org/lwjgl/**
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/linux/x86_64</markersDirectory>
@@ -110,8 +115,7 @@
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                glfw32.dll,
-                glfw32.dll.sha1
+                windows/x86/org/lwjgl/**
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
@@ -130,8 +134,7 @@
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                glfw.dll,
-                glfw.dll.sha1
+                windows/x64/org/lwjgl/**
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
@@ -150,8 +153,7 @@
               <includeClassifiers>natives-macos</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
-                **\/*.dylib,
-                **\/*.dylib.sha1
+                macos/x64/org/lwjgl/**
               </includes>
               <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
               <markersDirectory>${project.build.directory}/unpack-markers/osx/x86_64</markersDirectory>
@@ -277,19 +279,19 @@
                 </Include-Resource>
 
                 <Bundle-NativeCode>
-                  glfw32.dll;
+                  windows/x86/org/lwjgl/glfw/glfw.dll;
                   osname=Win32; processor=x86,
 
-                  glfw.dll;
+                  windows/x64/org/lwjgl/glfw/glfw.dll;
                   osname=Win32; processor=x86-64,
 
-                  libglfw.so;
+                  linux/x64/org/lwjgl/glfw/libglfw.so;
                   osname=Linux; processor=x86-64,
 
-                  libglfw_wayland.so;
+                  linux/x64/org/lwjgl/glfw/libglfw_wayland.so;
                   osname=Linux; processor=x86-64,
 
-                  libglfw.dylib;
+                  macos/x64/org/lwjgl/glfw/libglfw.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 
@@ -301,11 +303,17 @@
                 <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
                 <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
 
+                <Multi-Release>true</Multi-Release>
                 <Sealed>true</Sealed>
               </instructions>
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>io.github.zlika</groupId>
+        <artifactId>reproducible-build-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
