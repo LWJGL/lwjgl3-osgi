@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.lwjgl.osgi</groupId>
+    <artifactId>org.lwjgl.parent</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+  </parent>
+
+  <packaging>bundle</packaging>
+  <artifactId>org.lwjgl.shaderc</artifactId>
+  <name>org.lwjgl.shaderc</name>
+  <description>LWJGL OSGi bundle (Shaderc bindings)</description>
+  <url>https://github.com/LWJGL/lwjgl3-osgi</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>org.lwjgl.lwjgl</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-shaderc</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-shaderc</artifactId>
+      <scope>provided</scope>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-shaderc</artifactId>
+      <classifier>natives-linux</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-shaderc</artifactId>
+      <classifier>natives-macos</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-shaderc</artifactId>
+      <classifier>natives-windows</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.lwjgl</groupId>
+      <artifactId>lwjgl-shaderc</artifactId>
+      <classifier>natives-windows-x86</classifier>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Unpack LWJGL dependencies/sources/natives -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <!-- Unpack natives -->
+          <execution>
+            <id>unpack-natives-shaderc-linux</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-shaderc</includeArtifactIds>
+              <includeClassifiers>natives-linux</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                linux/x64/org/lwjgl/**
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/linux/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-shaderc-windows-x86</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-shaderc</includeArtifactIds>
+              <includeClassifiers>natives-windows-x86</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                windows/x86/org/lwjgl/**
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/windows/x86</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-shaderc-windows-x86_64</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-shaderc</includeArtifactIds>
+              <includeClassifiers>natives-windows</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                windows/x64/org/lwjgl/**
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/windows/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-natives-shaderc-macos-x86_64</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-shaderc</includeArtifactIds>
+              <includeClassifiers>natives-macos</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>
+                macos/x64/org/lwjgl/**
+              </includes>
+              <outputDirectory>${project.build.directory}/unpacked/</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-markers/osx/x86_64</markersDirectory>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>unpack-sources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <includeGroupIds>org.lwjgl</includeGroupIds>
+              <includeArtifactIds>lwjgl-shaderc</includeArtifactIds>
+              <includeClassifiers>sources</includeClassifiers>
+              <includeTypes>jar</includeTypes>
+              <includes>**\/*</includes>
+              <outputDirectory>${project.build.directory}/unpacked-sources</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpack-source-markers</markersDirectory>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>unpack-module-descriptor</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <overWriteReleases>true</overWriteReleases>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.lwjgl</groupId>
+                  <artifactId>lwjgl-shaderc</artifactId>
+                </artifactItem>
+              </artifactItems>
+              <includes>**\/module-info.class</includes>
+              <outputDirectory>${project.build.directory}/unpacked-module</outputDirectory>
+              <markersDirectory>${project.build.directory}/unpacked-module-markers</markersDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Produce source jar -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-sources</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>${project.build.directory}/unpacked-sources</sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sources-jar</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <attach>true</attach>
+              <classifier>sources</classifier>
+              <archive>
+                <addMavenDescriptor>false</addMavenDescriptor>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Produce OSGi bundle -->
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>default-bundle</id>
+            <configuration>
+              <instructions>
+                <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+
+                <Require-Capability>
+                  osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version>=1.8))"
+                </Require-Capability>
+
+                <Import-Package>
+                  <!-- Add explicit imports for LWJGL -->
+                  org.lwjgl,
+                  org.lwjgl.system,
+                  org.lwjgl.system.*,
+                  sun.misc,
+                </Import-Package>
+
+                <Embed-Dependency>
+                  artifactId=lwjgl-shaderc;classifier=!sources;inline=!*.jar
+                </Embed-Dependency>
+
+                <Export-Package>
+                  org.lwjgl.util.shaderc
+                </Export-Package>
+
+                <Include-Resource>
+                  ${project.build.directory}/unpacked/,
+                  ${project.build.directory}/unpacked-module/
+                </Include-Resource>
+
+                <Bundle-NativeCode>
+                  windows/x86/org/lwjgl/shaderc/shaderc.dll;
+                  osname=Win32; processor=x86,
+                  windows/x86/org/lwjgl/shaderc/shaderc_spvc.dll;
+                  osname=Win32; processor=x86,
+
+                  windows/x64/org/lwjgl/shaderc/shaderc.dll;
+                  osname=Win32; processor=x86-64,
+                  windows/x64/org/lwjgl/shaderc/shaderc_spvc.dll;
+                  osname=Win32; processor=x86-64,
+
+                  linux/x64/org/lwjgl/shaderc/libshaderc.so;
+                  osname=Linux; processor=x86-64,
+                  linux/x64/org/lwjgl/shaderc/libshaderc_spvc.so;
+                  osname=Linux; processor=x86-64,
+
+                  macos/x64/org/lwjgl/shaderc/libshaderc.dylib;
+                  osname=MacOSX; processor=x86-64,
+                  macos/x64/org/lwjgl/shaderc/libshaderc_spvc.dylib;
+                  osname=MacOSX; processor=x86-64
+                </Bundle-NativeCode>
+
+                <Specification-Title>Lightweight Java Game Library</Specification-Title>
+                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-Vendor>lwjgl.org</Specification-Vendor>
+                <Implementation-Title>lwjgl</Implementation-Title>
+                <Implementation-Version>${project.version}</Implementation-Version>
+                <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
+                <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+
+                <Multi-Release>true</Multi-Release>
+                <Sealed>true</Sealed>
+              </instructions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>io.github.zlika</groupId>
+        <artifactId>reproducible-build-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

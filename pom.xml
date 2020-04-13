@@ -51,6 +51,7 @@
     <module>org.lwjgl.yoga</module>
     <module>org.lwjgl.zstd</module>
     <module>org.lwjgl.llvm</module>
+    <module>org.lwjgl.shaderc</module>
   </modules>
 
   <properties>
@@ -1260,6 +1261,42 @@
       <dependency>
         <groupId>org.lwjgl</groupId>
         <artifactId>lwjgl-llvm</artifactId>
+        <classifier>natives-windows-x86</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-shaderc</artifactId>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-shaderc</artifactId>
+        <version>${org.lwjgl.version}</version>
+        <classifier>sources</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-shaderc</artifactId>
+        <classifier>natives-linux</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-shaderc</artifactId>
+        <classifier>natives-macos</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-shaderc</artifactId>
+        <classifier>natives-windows</classifier>
+        <version>${org.lwjgl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.lwjgl</groupId>
+        <artifactId>lwjgl-shaderc</artifactId>
         <classifier>natives-windows-x86</classifier>
         <version>${org.lwjgl.version}</version>
       </dependency>
