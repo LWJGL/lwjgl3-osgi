@@ -250,7 +250,7 @@
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.util.llvm
+                  org.lwjgl.llvm
                 </Export-Package>
 
                 <Include-Resource>
