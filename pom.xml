@@ -55,8 +55,8 @@
   </modules>
 
   <properties>
-    <build-helper-maven-plugin.version>3.1.0</build-helper-maven-plugin.version>
-    <maven-bundle-plugin.version>4.2.1</maven-bundle-plugin.version>
+    <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+    <maven-bundle-plugin.version>5.1.1</maven-bundle-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
@@ -65,15 +65,15 @@
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
     <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
     <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
-    <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+    <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <org.lwjgl.version>3.2.3</org.lwjgl.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <wagon-ssh-external.version>2.9</wagon-ssh-external.version>
-    <reproducible-build-maven-plugin.version>0.11</reproducible-build-maven-plugin.version>
+    <reproducible-build-maven-plugin.version>0.13</reproducible-build-maven-plugin.version>
   </properties>
 
   <licenses>
