@@ -1,10 +1,16 @@
 lwjgl3-osgi
 ===
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.lwjgl.osgi/org.lwjgl.parent/badge.png)](https://maven-badges.herokuapp.com/maven-central/org.lwjgl.osgi/org.lwjgl.parent)
+[![Maven Central](https://img.shields.io/maven-central/v/org.lwjgl.osgi/org.lwjgl.parent)](https://search.maven.org/search?q=g:org.lwjgl.osgi)
 
 This project produces a set of [OSGi](https://www.osgi.org) bundles for
 the [LWJGL](https://lwjgl.org) library.
+
+| JVM             | Platform | Status |
+|-----------------|----------|--------|
+| OpenJDK LTS     | Linux    | [![Build (OpenJDK LTS, Linux)](https://img.shields.io/github/workflow/status/LWJGL/lwjgl3-osgi/main-openjdk_lts-linux)](https://github.com/LWJGL/lwjgl3-osgi/actions?query=workflow%3Amain-openjdk_lts-linux) |
+| OpenJDK Current | Linux    | [![Build (OpenJDK Current, Linux)](https://img.shields.io/github/workflow/status/LWJGL/lwjgl3-osgi/main-openjdk_current-linux)](https://github.com/LWJGL/lwjgl3-osgi/actions?query=workflow%3Amain-openjdk_current-linux)
+| OpenJDK Current | Windows  | [![Build (OpenJDK Current, Windows)](https://img.shields.io/github/workflow/status/LWJGL/lwjgl3-osgi/main-openjdk_current-windows)](https://github.com/LWJGL/lwjgl3-osgi/actions?query=workflow%3Amain-openjdk_current-windows)
 
 ## Usage
 
@@ -15,12 +21,12 @@ the ordinary LWJGL libraries:
 <dependency>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.glfw</artifactId>
-  <version>3.2.0</version>
+  <version>${latestVersion}</version>
 </dependency>
 <dependency>
   <groupId>org.lwjgl.osgi</groupId>
   <artifactId>org.lwjgl.opengl</artifactId>
-  <version>3.2.0</version>
+  <version>${latestVersion}</version>
 </dependency>
 ```
 
