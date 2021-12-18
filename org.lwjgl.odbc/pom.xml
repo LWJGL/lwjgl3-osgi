@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.lwjgl.osgi</groupId>
     <artifactId>org.lwjgl.parent</artifactId>
-    <version>3.2.1.2</version>
+    <version>3.3.0</version>
   </parent>
 
   <packaging>bundle</packaging>
@@ -117,7 +117,6 @@
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
                   org.lwjgl.system,
-                  org.lwjgl.system.*,
                   sun.misc,
                 </Import-Package>
 
@@ -137,11 +136,17 @@
                 <Implementation-Vendor>lwjgl.org</Implementation-Vendor>
                 <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
 
+                <Multi-Release>true</Multi-Release>
                 <Sealed>true</Sealed>
               </instructions>
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>io.github.zlika</groupId>
+        <artifactId>reproducible-build-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

@@ -12,9 +12,9 @@
   </parent>
 
   <packaging>bundle</packaging>
-  <artifactId>org.lwjgl.lz4</artifactId>
-  <name>org.lwjgl.lz4</name>
-  <description>LWJGL OSGi bundle (lz4 bindings)</description>
+  <artifactId>org.lwjgl.llvm</artifactId>
+  <name>org.lwjgl.llvm</name>
+  <description>LWJGL OSGi bundle (LLVM bindings)</description>
   <url>https://github.com/LWJGL/lwjgl3-osgi</url>
 
   <dependencies>
@@ -26,36 +26,36 @@
 
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-lz4</artifactId>
+      <artifactId>lwjgl-llvm</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-lz4</artifactId>
+      <artifactId>lwjgl-llvm</artifactId>
       <scope>provided</scope>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-lz4</artifactId>
+      <artifactId>lwjgl-llvm</artifactId>
       <classifier>natives-linux</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-lz4</artifactId>
+      <artifactId>lwjgl-llvm</artifactId>
       <classifier>natives-macos</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-lz4</artifactId>
+      <artifactId>lwjgl-llvm</artifactId>
       <classifier>natives-windows</classifier>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.lwjgl</groupId>
-      <artifactId>lwjgl-lz4</artifactId>
+      <artifactId>lwjgl-llvm</artifactId>
       <classifier>natives-windows-x86</classifier>
       <scope>provided</scope>
     </dependency>
@@ -71,7 +71,7 @@
         <executions>
           <!-- Unpack natives -->
           <execution>
-            <id>unpack-natives-lz4-linux</id>
+            <id>unpack-natives-llvm-linux</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -79,7 +79,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-lz4</includeArtifactIds>
+              <includeArtifactIds>lwjgl-llvm</includeArtifactIds>
               <includeClassifiers>natives-linux</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -90,7 +90,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-lz4-windows-x86</id>
+            <id>unpack-natives-llvm-windows-x86</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -98,7 +98,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-lz4</includeArtifactIds>
+              <includeArtifactIds>lwjgl-llvm</includeArtifactIds>
               <includeClassifiers>natives-windows-x86</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -109,7 +109,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-lz4-windows-x86_64</id>
+            <id>unpack-natives-llvm-windows-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -117,7 +117,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-lz4</includeArtifactIds>
+              <includeArtifactIds>lwjgl-llvm</includeArtifactIds>
               <includeClassifiers>natives-windows</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -128,7 +128,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>unpack-natives-lz4-macos-x86_64</id>
+            <id>unpack-natives-llvm-macos-x86_64</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
@@ -136,7 +136,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-lz4</includeArtifactIds>
+              <includeArtifactIds>lwjgl-llvm</includeArtifactIds>
               <includeClassifiers>natives-macos</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>
@@ -156,7 +156,7 @@
             <configuration>
               <overWriteReleases>true</overWriteReleases>
               <includeGroupIds>org.lwjgl</includeGroupIds>
-              <includeArtifactIds>lwjgl-lz4</includeArtifactIds>
+              <includeArtifactIds>lwjgl-llvm</includeArtifactIds>
               <includeClassifiers>sources</includeClassifiers>
               <includeTypes>jar</includeTypes>
               <includes>**\/*</includes>
@@ -176,7 +176,7 @@
               <artifactItems>
                 <artifactItem>
                   <groupId>org.lwjgl</groupId>
-                  <artifactId>lwjgl-lz4</artifactId>
+                  <artifactId>lwjgl-llvm</artifactId>
                 </artifactItem>
               </artifactItems>
               <includes>**\/module-info.class</includes>
@@ -241,15 +241,16 @@
                   <!-- Add explicit imports for LWJGL -->
                   org.lwjgl,
                   org.lwjgl.system,
+                  org.lwjgl.system.*,
                   sun.misc,
                 </Import-Package>
 
                 <Embed-Dependency>
-                  artifactId=lwjgl-lz4;classifier=!sources;inline=!*.jar
+                  artifactId=lwjgl-llvm;classifier=!sources;inline=!*.jar
                 </Embed-Dependency>
 
                 <Export-Package>
-                  org.lwjgl.util.lz4
+                  org.lwjgl.llvm
                 </Export-Package>
 
                 <Include-Resource>
@@ -258,16 +259,16 @@
                 </Include-Resource>
 
                 <Bundle-NativeCode>
-                  windows/x86/org/lwjgl/lz4/lwjgl_lz4.dll;
+                  windows/x86/org/lwjgl/llvm/lwjgl_llvm.dll;
                   osname=Win32; processor=x86,
 
-                  windows/x64/org/lwjgl/lz4/lwjgl_lz4.dll;
+                  windows/x64/org/lwjgl/llvm/lwjgl_llvm.dll;
                   osname=Win32; processor=x86-64,
 
-                  linux/x64/org/lwjgl/lz4/liblwjgl_lz4.so;
+                  linux/x64/org/lwjgl/llvm/liblwjgl_llvm.so;
                   osname=Linux; processor=x86-64,
 
-                  macos/x64/org/lwjgl/lz4/liblwjgl_lz4.dylib;
+                  macos/x64/org/lwjgl/llvm/liblwjgl_llvm.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 
