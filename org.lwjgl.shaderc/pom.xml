@@ -265,22 +265,14 @@
                 <Bundle-NativeCode>
                   windows/x86/org/lwjgl/shaderc/shaderc.dll;
                   osname=Win32; processor=x86,
-                  windows/x86/org/lwjgl/shaderc/shaderc_spvc.dll;
-                  osname=Win32; processor=x86,
 
                   windows/x64/org/lwjgl/shaderc/shaderc.dll;
-                  osname=Win32; processor=x86-64,
-                  windows/x64/org/lwjgl/shaderc/shaderc_spvc.dll;
                   osname=Win32; processor=x86-64,
 
                   linux/x64/org/lwjgl/shaderc/libshaderc.so;
                   osname=Linux; processor=x86-64,
-                  linux/x64/org/lwjgl/shaderc/libshaderc_spvc.so;
-                  osname=Linux; processor=x86-64,
 
                   macos/x64/org/lwjgl/shaderc/libshaderc.dylib;
-                  osname=MacOSX; processor=x86-64,
-                  macos/x64/org/lwjgl/shaderc/libshaderc_spvc.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
 

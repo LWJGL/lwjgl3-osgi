@@ -288,9 +288,6 @@
                   linux/x64/org/lwjgl/glfw/libglfw.so;
                   osname=Linux; processor=x86-64,
 
-                  linux/x64/org/lwjgl/glfw/libglfw_wayland.so;
-                  osname=Linux; processor=x86-64,
-
                   macos/x64/org/lwjgl/glfw/libglfw.dylib;
                   osname=MacOSX; processor=x86-64
                 </Bundle-NativeCode>
